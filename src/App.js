@@ -1,7 +1,8 @@
+import GroupComponent from "./components/GroupComponent";
 import "./App.css";
 
 function App() {
-  return <div>VK test</div>;
+  return <GroupComponent />;
 }
 
 export default App;

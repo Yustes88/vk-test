@@ -1,0 +1,26 @@
+.group-item-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-container {
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+}
+
+.button {
+  border: none;
+}
+
+.friends-list {
+  display: flex;
+}
