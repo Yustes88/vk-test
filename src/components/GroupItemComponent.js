@@ -18,8 +18,10 @@ const GroupItemComponent = (group) => {
             src="/avatar.jpg"
             alt="Avatar"
           ></img>
+          <div className="privacy-indicator">
+            {group.group.closed ? "Закрытая" : "Открытая"}
+          </div>
         </div>
-        <div>{group.group.closed ? "Закрытая" : "Открытая"}</div>
         <div>Количество участников: {group.group.members_count}</div>
         <div className="friends-list">
           {"friends" in group.group && (

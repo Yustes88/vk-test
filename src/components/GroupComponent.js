@@ -12,8 +12,11 @@ import {
 const GroupComponent = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  let avatarColors = [];
 
-  const avatarColors = getAvatarColors(data);
+  if (data) {
+    avatarColors = getAvatarColors(data);
+  }
 
   const fetchData = async () => {
     try {
@@ -44,16 +47,13 @@ const GroupComponent = () => {
     setFilteredData(filteredGroups);
   };
 
-  if (!filteredData) {
-    return <p>No groups</p>;
-  }
-
   return (
     <div>
       <h1>Groups:</h1>
       <div>
         <FilterComponent onFilter={handleFilter} colors={avatarColors} />
       </div>
+      {!filteredData && <div>No groups availavle</div>}
       {filteredData && (
         <ul>
           {filteredData.map((group) => (

@@ -9,23 +9,21 @@ const FilterComponent = ({ onFilter, colors }) => {
     onFilter(privacy, color, hasFriends);
   };
 
-  console.log(colors);
-
   return (
     <div>
       <label>
-        Privacy:
+        Приватность группы:
         <select value={privacy} onChange={(e) => setPrivacy(e.target.value)}>
-          <option value="all">All</option>
-          <option value="closed">Closed</option>
-          <option value="open">Open</option>
+          <option value="all">Все</option>
+          <option value="closed">Закрытая</option>
+          <option value="open">Открытая</option>
         </select>
       </label>
 
       <label>
-        Avatar Color:
+        Цвет аватарки:
         <select value={color} onChange={(e) => setColor(e.target.value)}>
-          <option value="any">Any</option>
+          <option value="any">Любой</option>
           {colors.map((color) => {
             return (
               <option key={color} value={color}>
@@ -37,7 +35,7 @@ const FilterComponent = ({ onFilter, colors }) => {
       </label>
 
       <label>
-        Has Friends:
+        С друзьями:
         <input
           type="checkbox"
           checked={hasFriends}
@@ -45,7 +43,7 @@ const FilterComponent = ({ onFilter, colors }) => {
         />
       </label>
 
-      <button onClick={handleFilter}>Apply Filters</button>
+      <button onClick={handleFilter}>Применить фильтры</button>
     </div>
   );
 };
