@@ -11,11 +11,13 @@ const GroupItemComponent = (group) => {
     <>
       <div className="group-item-container">
         <h1>{group.group.name}</h1>
-        <div className="avatar-container">
+        <div
+          className="avatar-container"
+          style={{ border: `solid ${group.group.avatar_color}` }}
+        >
           <img
             className="avatar-image"
-            style={{ border: `solid ${group.group.avatar_color}` }}
-            src="/avatar.jpg"
+            src={"avatar_url" in group.group ? "avatar_url" : "/avatar.jpg"}
             alt="Avatar"
           ></img>
           <div className="privacy-indicator">
