@@ -11,7 +11,9 @@ import {
 
 const GroupComponent = () => {
   const [data, setData] = useState([]);
+  const [result, setResult] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
+
   let avatarColors = [];
 
   if (data) {
@@ -24,6 +26,7 @@ const GroupComponent = () => {
 
       const response = await axios.get("/db.json");
       setData(response.data.groups);
+      setResult(response.data.result);
       setFilteredData(response.data.groups);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -46,6 +49,10 @@ const GroupComponent = () => {
 
     setFilteredData(filteredGroups);
   };
+
+  if (!result) {
+    return <div>Oopps, something went wrong, please try again later</div>;
+  }
 
   return (
     <div>
