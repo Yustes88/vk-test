@@ -51,7 +51,11 @@ const GroupComponent = () => {
   };
 
   if (!result) {
-    return <div>Oopps, something went wrong, please try again later</div>;
+    return (
+      <div>
+        Oopps, кажется что-то пошло не так, мы уже работаем над проблемой
+      </div>
+    );
   }
 
   return (
@@ -60,8 +64,10 @@ const GroupComponent = () => {
       <div>
         <FilterComponent onFilter={handleFilter} colors={avatarColors} />
       </div>
-      {!filteredData && <div>No groups availavle</div>}
-      {filteredData && (
+      {!filteredData && <div>Групп пока что нет</div>}
+      {filteredData.length === 0 ? (
+        "Группы, соответсвующие данным фильтрам, отсутсвтуют. Попробуйте поменять фильтры."
+      ) : (
         <ul>
           {filteredData.map((group) => (
             <GroupItemComponent key={group.id} group={group} />
