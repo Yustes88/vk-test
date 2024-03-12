@@ -7,6 +7,12 @@
 
 .avatar-container {
   position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 50%;
 }
 
 .privacy-indicator {
@@ -17,12 +23,13 @@
 }
 
 .avatar-image {
-  width: 100px;
-  height: 100px;
-  box-sizing: border-box;
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  width: inherit;
+  display: flex;
   background-size: cover;
-  background-position: top center;
-  border-radius: 50%;
+  background-position: center;
 }
 
 .button {
